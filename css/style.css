@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap");
+
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #313131;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+.exibir-filmes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cards {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /*faz o flex box se comportar como coluna*/
+  justify-content: space-between;
+  width: 300px;
+  padding: 25px;
+  background-color: #3f3f3f;
+  text-align: justify; /*justifica o texto*/
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389);
+  position: relative;
+  
+}
+
+/*detalhe no canto superior*/
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 20px solid transparent;
+  border-top: 20px solid #52307c;
+  border-right: 20px solid #52307c;
+}
+
+.icon {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon img {
+  width: 125px;
+}
+
+.content {
+  height: 215px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Estilização da barra de rolagem */
+.content p::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.content p::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor do fundo da barra de rolagem */
+}
+
+.content p::-webkit-scrollbar-thumb {
+  background-color: #888; /* Cor do botão da barra de rolagem */
+}
+
+/*Transparencia no texto*/
+.content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(transparent, #3f3f3f);
+}
+
+.content h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  position: relative;
+}
+
+/*linha de enfeite*/
+/*.content h3::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 205px; tamanho da linha
+    background-color: #52307c;
+    bottom: 4px;
+    border-radius: 100px;
+}*/
+
+.content p {
+  color: #b7b7b7;
+}
+
+/*Botões*/
+#botao_ler {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #52307c;
+  color: #313131;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+#botao_ler:hover {
+  background-color: transparent;
+  color: #52307c;
+  transition: all 0.2s ease-in-out;
+}
+
+#trailer {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #52307c;
+  color: #3f3f3f;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+#trailer a {
+  color: #313131;
+}
+
+
+#trailer:hover {
+  background-color: transparent;
+  color: #52307c;
+  transition: all 0.2s ease-in-out;
+}
+
+/*sobe e desce do botão*/
+.card.active .content {
+  height: 250px;
+}
+
+.card.active .content p {
+  height: 170px;
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.card.active .content::before {
+  visibility: hidden;
+}
+/*
+tom 1= bca0dc
+tom2= 52307c
+tom3= 3c1361
+
+*/
